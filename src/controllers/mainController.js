@@ -11,8 +11,13 @@ const controller = {
 		res.render("index")
 	},
 	search: (req, res) => {
-		// Do the magic
-	},
+		let busqueda = req.query.keywords;
+		console.log(busqueda)
+		productosBuscados = products.filter((producto)=> producto.description.includes(busqueda))
+		console.log(productosBuscados)
+		res.send(productosBuscados)
+	
+	}
 };
 
 module.exports = controller;

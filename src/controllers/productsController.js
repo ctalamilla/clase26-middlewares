@@ -70,7 +70,7 @@ const controller = {
 		let id = req.params.id;
         let infoForm=req.body;
 		products = products.filter((producto)=> producto.id != id)
-    //celulares = newCelulares
+
     res.send(products)
 	}
 };
