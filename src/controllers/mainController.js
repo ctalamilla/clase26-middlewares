@@ -6,6 +6,7 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
+
 const controller = {
 	index: (req, res) => {
 		res.render("index")
@@ -17,6 +18,11 @@ const controller = {
 		console.log(productosBuscados)
 		res.send(productosBuscados)
 	
+	},
+	admin: (req, res)=> {
+		let user = req.query.user;
+		res.send('Hola Admin:'+ user);
+
 	}
 };
 
